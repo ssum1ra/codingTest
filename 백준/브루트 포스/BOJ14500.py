@@ -23,8 +23,8 @@ def dfs(x, y, total, depth):
         if nx < 0 or nx >= N or ny < 0 or ny >= M or visited[nx][ny]:
             continue
 
-        if depth == 1:
-            visited[nx][ny] = True
+        if depth == 1:  # 2개가 색칠 되어있음
+            visited[nx][ny] = True  # 3개 색칠함
             dfs(x, y, total + board[nx][ny], depth + 1)
             visited[nx][ny] = False
 
