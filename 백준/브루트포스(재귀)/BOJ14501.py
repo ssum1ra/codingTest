@@ -16,7 +16,6 @@ print(dp[0])
 
 """ dfs 코드
 import sys; input = sys.stdin.readline
-
 def consult(day, p_total):
     global answer
     # 퇴사일의 경우
