@@ -1,6 +1,5 @@
 from collections import deque
 import sys
-input = sys.stdin.readline()
 
 
 def bfs(v):
@@ -9,14 +8,16 @@ def bfs(v):
         v = q.popleft()
         if v == k:
             return arr[v]
-        for nv in (v-1, v+1, v*2):
-            if 0 <= nv <= MAX and not arr[nv]:
+
+        for nv in (v-1, v+1, 2*v):
+            if 0 <= nv < MAX and not arr[nv]:
                 arr[nv] = arr[v] + 1
-                bfs(nv)
+                path[nv] = v
+                q.append(nv)
 
 
 MAX = 10**5 + 1
-n, k = map(int, input().split())
+n, k = map(int, sys.stdin.readline().split())
 arr = [0] * MAX
+path = [0] * MAX
 print(bfs(n))
-print()
