@@ -13,17 +13,17 @@ cnt = 0
 
 def getPos():
     rx, ry, bx, by = 0, 0, 0, 0
-    for i in range(n):
-        for j in range(m):
-            if board[x][y] = "R":
+    for x in range(n):
+        for y in range(m):
+            if board[x][y] == "R":
                 rx, ry = x, y
-            if boerd[x][y] = "B":
+            if board[x][y] == "B":
                 bx, by = x, y
     return rx, ry, bx, by
 
 def move(x, y, dx, dy):
     cnt = 0
-    while board[x + dx][y + dy] != "#" and board[x][y] = "O":
+    while board[x + dx][y + dy] != "#" and board[x][y] != "O":
         x += dx
         y += dy
         cnt += 1
@@ -46,10 +46,10 @@ def bfs():
             nrx, nry, rcnt = move(rx, ry, dx[i], dy[i])
             nbx, nby, bcnt = move(bx, by, dx[i], dy[i])
             
-            if board[nbx][nby] = "O":
+            if board[nbx][nby] == "O":
                 continue
             
-            if board[nrx][nry] = "O":
+            if board[nrx][nry] == "O":
                 print(result)
                 return
             
