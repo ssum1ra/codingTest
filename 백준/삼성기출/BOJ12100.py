@@ -10,7 +10,7 @@ for _ in range(N):
 def left(board):
     for i in range(N):
         cursor = 0
-        for j in range(1,N):
+        for j in range(N):
             if board[i][j] != 0:
                 tmp = board[i][j]
                 board[i][j] = 0
@@ -66,9 +66,9 @@ def up(board):
     return board
 
 def down(board):
-    for i in range(N):
+    for j in range(N):
         cursor = N-1
-        for j in range(N-1, -1, -1):
+        for i in range(N-1, -1, -1):
             if board[i][j] != 0:
                 tmp = board[i][j]
                 board[i][j] = 0
