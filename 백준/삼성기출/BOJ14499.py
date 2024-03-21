@@ -17,11 +17,11 @@ board = [list(map(int, input().split())) for _ in range(N)]
 moves = list(map(int, input().split()))
 
 dice = [0] * 6
-dx = [1, -1, 0, 0]
-dy = [0, 0, -1, 1]
+dx = [0, 0, -1, 1]
+dy = [1, -1, 0, 0]
 
 for i in moves:
-    if 0 <= x + dx[i-1] < M and 0 <= y + dy[i-1] < N:
+    if 0 <= x + dx[i-1] < N and 0 <= y + dy[i-1] < M:
         x = x + dx[i-1]
         y = y + dy[i-1]
         roll(i)
