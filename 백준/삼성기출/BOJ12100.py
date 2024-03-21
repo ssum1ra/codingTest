@@ -29,7 +29,6 @@ def right(board):
     for i in range(N):
         cursor = N - 1
         for j in range(N - 1, -1, -1):
-
             if board[i][j] != 0:
                 tmp = board[i][j]
                 board[i][j] = 0
