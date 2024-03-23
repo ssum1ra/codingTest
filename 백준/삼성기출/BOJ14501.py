@@ -16,6 +16,5 @@ for i in range(N - 1, -1, -1):
     else:
         # i일에 상담을 하는 것과 상담을 안 하는 것 중 큰 것을 선택
         dp[i] = max(dp[i+1], dp[t[i] + i] + p[i])
-    print(dp)
         
 print(dp[0])
