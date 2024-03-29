@@ -1,22 +1,23 @@
 import sys
 input = sys.stdin.readline
 
-def backtracking(depth, ):
+def backtracking(depth, idx):
     global res
-    if  == N // 2:
+    if depth == N // 2:
         start, link = 0, 0
         for i in range(N):
-            for j in range(M):
-                if visited[i]=True and visited[j]=True:
+            for j in range(N):
+                if visited[i]==True and visited[j]==True:
                     start += S[i][j] 
-                elif visited[i]=False and visited[j]=False:
+                elif visited[i]==False and visited[j]==False:
                     link += S[i][j]
         res = min(res, abs(start-link))
+        return
     
-    for i in range(, N):
+    for i in range(idx, N):
         if not visited[i]:
             visited[i] = True
-            backtracking()
+            backtracking(depth+1, i+1)
             visited[i] = False
                             
 N = int(input())
